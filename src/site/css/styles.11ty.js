@@ -7,12 +7,12 @@ const postcss = require('postcss');
 const fileName = "styles.css";
 
 module.exports = class {
-  async data () {
+  data () {
     const rawFilepath = path.join(__dirname, `/${fileName}`);
     return {
       permalink: `css/${fileName}`,
       rawFilepath,
-      rawCss: await fs.readFileSync(rawFilepath)
+      rawCss: fs.readFileSync(rawFilepath)
     };
   };
 
@@ -22,6 +22,9 @@ module.exports = class {
         require('tailwindcss'),
     ])
     .process(rawCss, { from: rawFilepath })
-    .then(result => result.css);
+    .then(result => {
+      result.css
+      console.log("processed successfully")
+    });
   };
 }

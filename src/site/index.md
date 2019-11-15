@@ -5,5 +5,5 @@ layout: layouts/base.njk
 
 You have this to work from:
 
-- 🎨 Working CSS stylesheet
+- 🎨 Working [Tailwind CSS](https://tailwindcss.com) Pipeline
 - 💻 Connected Javascript file

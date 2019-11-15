@@ -1,3 +1,3 @@
 (function() {
-    console.log('🔥🔥🔥 Static site template 💻 🍰');
-  })();
+  console.log('🔥🔥🔥 Static site template 💻 🍰');
+})();
