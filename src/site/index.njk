@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+---
+<h2>This site is a starting point</h2>
+
+<h2>Features</h2>
+
+<div class="features sm:flex sm:justify-around">
+{%- for feature in features -%}
+  <div class="border rounded border-yellow-600 sm:w-1/3 m-4 p-2">
+    <p class="text-center font-semibold">{{ feature.title }}</p>
+    <p>{{ feature.details }}</p>
+    {# <time datetime="{{ page.date }}">{{ page.date | dateDisplay("LLLL d, y") }}</time> #}
+  </div>
+{%- endfor -%}
+</div>
