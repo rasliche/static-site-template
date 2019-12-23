@@ -4,14 +4,15 @@
   "description": "Static site template repository.",
   "main": "index.js",
   "scripts": {
+    "style": "npx tailwind build src/styles.css -o src/_includes/css/main.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Eric Raslich",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.9.0"
+    "@11ty/eleventy": "^0.9.0",
+    "tailwindcss": "^1.1.3"
   },
   "dependencies": {
-    "tailwindcss": "^1.1.3"
   }
 }
