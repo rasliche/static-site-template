@@ -7,7 +7,7 @@ const postcss = require('postcss');
 const fileName = "styles.css";
 
 module.exports = class {
-  data () {
+  async data () {
     const rawFilepath = path.join(__dirname, `/${fileName}`);
     return {
       permalink: `css/${fileName}`,
