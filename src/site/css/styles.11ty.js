@@ -23,8 +23,8 @@ module.exports = class {
     ])
     .process(rawCss, { from: rawFilepath })
     .then(result => {
-      result.css
-      console.log("processed successfully")
+      console.log("Processed CSS Successfully")
+      return result.css
     });
   };
 }
