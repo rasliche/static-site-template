@@ -12,5 +12,11 @@
     "twitter": "",
     "facebook": "",
     "email": ""    
+  },
+  "address": {
+    "street": "",
+    "city": "",
+    "state": "",
+    "zip": ""
   }
 }
