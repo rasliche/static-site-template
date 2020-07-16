@@ -1,9 +1,7 @@
 [build]
   functions = "src/functions"
-  [build.command]
-    eleventy
-  [build.publish]
-    _site
+  command = eleventy
+  publish = _site
 
 
 [[redirects]]
