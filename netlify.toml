@@ -1,5 +1,10 @@
 [build]
   functions = "src/functions"
+  [build.command]
+    eleventy
+  [build.publish]
+    _site
+
 
 [[redirects]]
   from = "/api/*"
