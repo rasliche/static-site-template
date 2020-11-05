@@ -2,14 +2,21 @@ const gitlog = require('gitlog').default
 const { DateTime } = require("luxon")
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.setDataDeepMerge(true);
-  
   // addPassthroughCopy strips the `dir.input` directory and replaces with `_site`
   eleventyConfig.addPassthroughCopy("src/site/.well-known/brave-rewards-verification.txt");
-  eleventyConfig.addPassthroughCopy("src/site/css/*.css");
+  // eleventyConfig.addPassthroughCopy("src/site/css/*.css");
   eleventyConfig.addPassthroughCopy("src/site/js/*.js");
   eleventyConfig.addPassthroughCopy("src/site/assets/*");
   eleventyConfig.addPassthroughCopy("src/site/service-worker.js");
+
+  // Collections
+  eleventyConfig.addCollection('blog', collection => {
+    return [...collection.getFilteredByGlob('./src/site/posts/*.md')].reverse()
+  })
+
+  eleventyConfig.addCollection('uses', collection => {
+    return collection.getFilteredByGlob('./src/site/uses/*.md')
+  })
 
   // filters
   // Add a friendly date filter to nunjucks.
@@ -55,10 +62,12 @@ module.exports = function(eleventyConfig) {
   });
 
   return {
+    markdownTemplateEngine: 'njk',
+    dataTemplateEngine: 'njk',
+    htmlTemplateEngine: 'njk',
     dir: {
       input: "src/site",
-      templateFormats : ["njk", "md", "11ty.js"],
-      markdownTemplateEngine : "njk",
+      templateFormats : ["11ty.js"],
     }
   };
 };
