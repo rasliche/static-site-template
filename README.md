@@ -1,0 +1,1 @@
+This is a static site template for jumpstarting projects.

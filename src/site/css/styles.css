@@ -1,5 +1,9 @@
 @tailwind base;
 
+* {
+    @apply relative;
+}
+
 @tailwind components;
 
 @tailwind utilities;
